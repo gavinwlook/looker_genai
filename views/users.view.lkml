@@ -19,6 +19,8 @@ view: users {
     type: string
     map_layer_name: countries
     sql: ${TABLE}.country ;;
+    suggest_persist_for: "1 second"
+    bypass_suggest_restrictions: yes
   }
   dimension_group: created {
     type: time
@@ -73,13 +75,16 @@ view: users {
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
-	id,
-	last_name,
-	first_name,
-	order_items.count,
-	orders.count,
-	events.count
-	]
+  id,
+  last_name,
+  first_name,
+  order_items.count,
+  orders.count,
+  events.count
+  ]
   }
+
+  parameter: country_parameter {suggest_dimension:country}
+
 
 }
