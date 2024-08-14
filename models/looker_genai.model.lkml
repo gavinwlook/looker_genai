@@ -18,10 +18,19 @@ explore: order_items {
       sql_trigger_value: SELECT CURRENT_DATE;;
     }
     query: {
-      dimensions: [created_month]
+      dimensions: [orders.created_month,users.country]
       measures: [total_sales]
-      timezone: Europe/Dublin
       }
+  }
+
+  aggregate_table: sales_annually {
+    materialization: {
+      sql_trigger_value: SELECT CURRENT_DATE;;
+    }
+    query: {
+      dimensions: [orders.created_year, users.country]
+      measures: [total_sales]
+    }
   }
 
   join: users {

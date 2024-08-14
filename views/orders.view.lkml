@@ -2,6 +2,7 @@ view: orders {
   sql_table_name: `looker_demo_data_2.orders` ;;
   drill_fields: [order_id]
 
+
   dimension: order_id {
     primary_key: yes
     type: number
