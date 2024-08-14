@@ -1,4 +1,4 @@
-connection: "looker_demo_data_2"
+connection: "bq_connection"
 label: "LLM"
 
 include: "generate_query.view.lkml"                # include all views in the views/ folder in this project
