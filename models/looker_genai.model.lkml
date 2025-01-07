@@ -1,4 +1,4 @@
-connection: "bq_connection"
+connection: "2025-connection"
 
 # include all the views
 include: "/views/**/*.view.lkml"
@@ -9,6 +9,8 @@ datagroup: looker_genai_default_datagroup {
 }
 
 persist_with: looker_genai_default_datagroup
+
+explore: daniel_song_test {}
 
 explore: order_items {
 
@@ -65,6 +67,7 @@ explore: order_items {
     sql_on: ${products.distribution_center_id} = ${distribution_centers.id} ;;
     relationship: many_to_one
   }
+
 
 
 }

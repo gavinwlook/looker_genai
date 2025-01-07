@@ -9,7 +9,7 @@ view: order_items {
   }
   dimension_group: created {
     type: time
-    timeframes: [raw, time, date, week, month, quarter, year]
+    timeframes: [raw, day_of_week_index, time, date, week, week_of_year, month, quarter, year]
     sql: ${TABLE}.created_at ;;
   }
   dimension_group: delivered {

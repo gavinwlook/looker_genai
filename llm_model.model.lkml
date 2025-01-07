@@ -1,4 +1,4 @@
-connection: "bq_connection"
+connection: "2025-connection"
 label: "LLM"
 
 include: "generate_query.view.lkml"                # include all views in the views/ folder in this project
