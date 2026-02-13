@@ -7,6 +7,8 @@ view: order_items {
     type: number
     sql: ${TABLE}.id ;;
   }
+
+
   dimension_group: created {
     type: time
     timeframes: [raw, day_of_week_index, time, date, week, week_of_year, month, quarter, year]

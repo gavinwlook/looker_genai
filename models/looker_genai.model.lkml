@@ -8,6 +8,9 @@ datagroup: looker_genai_default_datagroup {
   max_cache_age: "1 hour"
 }
 
+access_grant: ca_test {allowed_values:["Yes"]
+  user_attribute:finance_group_member}
+
 persist_with: looker_genai_default_datagroup
 
 explore: daniel_song_test {}
@@ -49,7 +52,9 @@ explore: order_items {
     relationship: many_to_one
   }
 
+
   join: products {
+    required_access_grants: [ca_test]
     type: left_outer
     sql_on: ${order_items.product_id} = ${products.id} ;;
     relationship: many_to_one
@@ -67,7 +72,6 @@ explore: order_items {
     sql_on: ${products.distribution_center_id} = ${distribution_centers.id} ;;
     relationship: many_to_one
   }
-
 
 
 }
